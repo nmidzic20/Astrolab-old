@@ -2,6 +2,7 @@ package endava.project.starstruck
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -12,7 +13,7 @@ import endava.project.starstruck.fragments.PhotoGalleryFragment
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    lateinit var binding: ActivityMainBinding
 
     lateinit var tabLayout: TabLayout
     lateinit var viewPager2: ViewPager2
