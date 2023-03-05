@@ -9,9 +9,11 @@ import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import endava.project.starstruck.adapters.MainPagerAdapter
+import endava.project.starstruck.database.LessonsDatabase
 import endava.project.starstruck.databinding.ActivityMainBinding
 import endava.project.starstruck.fragments.LessonsOverviewFragment
 import endava.project.starstruck.fragments.PhotoGalleryFragment
+import endava.project.starstruck.helpers.MockDataLoader
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,6 +35,9 @@ class MainActivity : AppCompatActivity() {
 
         setFragments(mainPagerAdapter)
         setNavigationDrawer(mainPagerAdapter)
+
+        LessonsDatabase.buildInstance(applicationContext)
+        MockDataLoader.loadMockData()
     }
 
     private fun setFragments(mainPagerAdapter : MainPagerAdapter)

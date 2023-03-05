@@ -9,11 +9,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import endava.project.starstruck.R
 import endava.project.starstruck.adapters.LessonsAdapter
+import endava.project.starstruck.database.LessonsDatabase
 import endava.project.starstruck.helpers.MockDataLoader
 
 class LessonsOverviewFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
+    private val lessonsDao = LessonsDatabase.getInstance().getLessonsDAO()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,7 +26,10 @@ class LessonsOverviewFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         recyclerView = view.findViewById(R.id.rv_lessons_overview)
-        recyclerView.adapter = LessonsAdapter(MockDataLoader.getDemoData())
+        recyclerView.adapter = LessonsAdapter(lessonsDao.getAllLessons().toMutableList()) { lessonId ->
+            val lessonsAdapter = recyclerView.adapter as LessonsAdapter
+            lessonsAdapter.modifyLesson(lessonsDao.getLesson((lessonId)))
+        }
         recyclerView.layoutManager = LinearLayoutManager(view.context)
     }
 }

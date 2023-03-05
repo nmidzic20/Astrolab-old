@@ -2,4 +2,7 @@
     <string name="app_name">Astrolab</string>
     <string name="lessons_overview">Lessons</string>
     <string name="photo_gallery">Gallery</string>
+    <string name="mark_lesson_completed">Mark as completed</string>
+    <string name="cancel">Cancel</string>
+    <string name="mark_lesson_incomplete">Mark as incomplete</string>
 </resources>
