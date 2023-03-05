@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Astrolab</string>
+    <string name="lessons_overview">Lessons</string>
+    <string name="photo_gallery">Gallery</string>
 </resources>
