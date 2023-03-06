@@ -11,6 +11,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import endava.project.starstruck.adapters.MainPagerAdapter
 import endava.project.starstruck.database.LessonsDatabase
 import endava.project.starstruck.databinding.ActivityMainBinding
+import endava.project.starstruck.fragments.DailyPhotoFragment
 import endava.project.starstruck.fragments.LessonsOverviewFragment
 import endava.project.starstruck.fragments.PhotoGalleryFragment
 import endava.project.starstruck.helpers.MockDataLoader
@@ -57,6 +58,13 @@ class MainActivity : AppCompatActivity() {
                 R.string.photo_gallery,
                 R.drawable.ic_baseline_photo_library_24,
                 PhotoGalleryFragment::class
+            )
+        )
+        mainPagerAdapter.addFragment(
+            MainPagerAdapter.FragmentItem(
+                R.string.daily_photo,
+                R.drawable.baseline_star_purple500_24,
+                DailyPhotoFragment::class
             )
         )
         viewPager2.adapter = mainPagerAdapter

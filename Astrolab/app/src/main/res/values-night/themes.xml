@@ -2,11 +2,11 @@
     <!-- Base application theme. -->
     <style name="Theme.Astrolab" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimary">@color/color_primary_dark</item>
         <item name="colorPrimaryVariant">@color/color_primary_dark</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/color_secondary</item>
+        <item name="colorSecondary">@color/color_secondary_dark</item>
         <item name="colorSecondaryVariant">@color/color_secondary_dark</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
