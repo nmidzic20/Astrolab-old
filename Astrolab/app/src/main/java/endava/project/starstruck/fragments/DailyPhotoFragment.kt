@@ -5,10 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.isVisible
+import com.squareup.picasso.Picasso
 import endava.project.starstruck.R
 import endava.project.starstruck.ws.WsDaily
 import endava.project.starstruck.ws.WsDailyResponse
@@ -19,9 +21,10 @@ import retrofit2.Response
 class DailyPhotoFragment : Fragment() {
 
     private lateinit var loadingCircle: ProgressBar
-    private  lateinit var tvTitle : TextView
-    private  lateinit var tvDescription : TextView
-    private  lateinit var tvDateCopyright : TextView
+    private lateinit var tvTitle : TextView
+    private lateinit var tvDescription : TextView
+    private lateinit var tvDateCopyright : TextView
+    private lateinit var ivDailyPhoto : ImageView
     private val ws = WsDaily.dailyService
 
     override fun onCreateView(
@@ -36,6 +39,7 @@ class DailyPhotoFragment : Fragment() {
         tvTitle = view.findViewById(R.id.tv_title)
         tvDescription = view.findViewById(R.id.tv_description)
         tvDateCopyright = view.findViewById(R.id.tv_date_copyright)
+        ivDailyPhoto = view.findViewById(R.id.iv_daily_photo)
 
         loadDailyPhoto()
     }
@@ -52,6 +56,7 @@ class DailyPhotoFragment : Fragment() {
                         tvTitle.text = responseBody.title
                         tvDescription.text = responseBody.explanation
                         tvDateCopyright.text = responseBody.date + " " + responseBody.copyright
+                        Picasso.get().load(responseBody.hdurl).into(ivDailyPhoto)
                         loadingCircle.isVisible = false
                     } else {
                         displayWebServiceErrorMessage()

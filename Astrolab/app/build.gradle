@@ -61,4 +61,6 @@ dependencies {
     //otherwise, just diagonal swipe for nav drawer
     implementation 'androidx.drawerlayout:drawerlayout:1.1.0-alpha02'
     implementation "androidx.appcompat:appcompat:1.1.0-rc01"
+
+    implementation 'com.squareup.picasso:picasso:2.8'
 }
