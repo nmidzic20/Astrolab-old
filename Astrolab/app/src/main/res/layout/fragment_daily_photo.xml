@@ -24,8 +24,8 @@
 
         <ImageView
             android:id="@+id/iv_daily_photo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
             android:src="@drawable/ic_baseline_photo_library_24"
             android:layout_gravity="center_horizontal"/>
 
@@ -36,7 +36,7 @@
             android:fontFamily="sans-serif-medium"
             android:justificationMode="inter_word"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:layout_margin = "25dp"
+            android:layout_margin ="25dp"
             android:text=""/>
 
         <TextView
@@ -51,7 +51,8 @@
         <ProgressBar
             android:id="@+id/pb_daily_photo_loading"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
 
     </LinearLayout>
 </ScrollView>
