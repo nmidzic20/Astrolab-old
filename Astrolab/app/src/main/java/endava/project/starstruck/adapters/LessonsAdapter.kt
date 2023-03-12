@@ -1,13 +1,16 @@
 package endava.project.starstruck.adapters
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.SurfaceView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat.startActivity
 import androidx.core.graphics.toColorInt
 import androidx.recyclerview.widget.RecyclerView
+import endava.project.starstruck.LessonViewActivity
 import endava.project.starstruck.R
 import endava.project.starstruck.database.LessonsDatabase
 import endava.project.starstruck.entities.Lesson
@@ -27,6 +30,11 @@ class LessonsAdapter(
             lessonName = view.findViewById(R.id.tv_lesson_name)
             lessonCompletionStatusColor = view.findViewById(R.id.sv_lesson_completion_status_color)
             lessonCompletionStatusText = view.findViewById(R.id.tv_lesson_completion_status_text)
+
+            view.setOnClickListener {
+                val intent = Intent(view.context, LessonViewActivity::class.java)
+                view.context.startActivity(intent)
+            }
 
             view.setOnLongClickListener {
                 val currentLesson = lessonsList[adapterPosition]
